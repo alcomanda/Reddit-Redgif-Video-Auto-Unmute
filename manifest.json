@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Reddit Video Auto-Unmute",
+    "version": "1.0",
+    "description": "Auto unmutes Reddit videos when they scroll into view and stops them when scrolling away.",
+    "permissions": [
+        "scripting"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.reddit.com/*",
+                "*://*.redgifs.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end",
+            "all_frames": true
+        }
+    ],
+    "host_permissions": [
+        "*://*.reddit.com/*",
+        "*://*.redgifs.com/*"
+    ]
+}
